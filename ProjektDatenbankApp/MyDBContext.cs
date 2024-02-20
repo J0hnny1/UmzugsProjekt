@@ -5,7 +5,7 @@ namespace ProjektDatenbankApp;
 
 public class MyDBContext: DbContext
 {
-    public DbSet<Person> User { get; set; }
+    public DbSet<Person> Person { get; set; }
     public DbSet<Geraet> Geraet { get; set; }
     public DbSet<Abteilung> Abteilung { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
