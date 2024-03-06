@@ -4,7 +4,7 @@ using System.Runtime.InteropServices.JavaScript;
 
 namespace ProjektDatenbankApp.Models;
 
-public class Person
+public class Mitarbeiter
 {
     [Key]
     public int Personalnummer { get; set; }
@@ -13,7 +13,6 @@ public class Person
     public DateTime? Geburtstag { get; set; }
     public string? Kontonummer { get; set; }
     public string? Straße { get; set; }
-    public int? Hausnummer { get; set; }
     public int? Plz { get; set; }
     public Abteilung? Abteilung { get; set; }
     

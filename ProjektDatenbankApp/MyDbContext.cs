@@ -3,9 +3,9 @@ using ProjektDatenbankApp.Models;
 
 namespace ProjektDatenbankApp;
 
-public class MyDBContext: DbContext
+public class MyDbContext: DbContext
 {
-    public DbSet<Person> Person { get; set; }
+    public DbSet<Mitarbeiter> Mitarbeiter { get; set; }
     public DbSet<Geraet> Geraet { get; set; }
     public DbSet<Abteilung> Abteilung { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

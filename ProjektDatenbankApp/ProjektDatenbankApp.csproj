@@ -19,9 +19,10 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.SQL.Server.2016.LocalDB" Version="13.1.4001" />
       <PackageReference Include="MySql.Data" Version="8.3.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0-beta.2" />
+      <PackageReference Include="WPF-UI" Version="3.0.0" />
     </ItemGroup>
 
     <ItemGroup>

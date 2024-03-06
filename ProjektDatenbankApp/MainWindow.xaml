@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Benutzerverwaltung" Height="450" Width="800">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -17,17 +17,42 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <TextBox Name="NameTextInput" Grid.Row="1" Grid.Column="0"></TextBox>
+
+        <TextBox Name="NameTextInput" Grid.Row="1" Grid.Column="0" Margin="5"></TextBox>
         <Label Grid.Row="0" Grid.Column="0">Name</Label>
-        
-        <TextBox Name="VornameTextInput" Grid.Row="1" Grid.Column="1"></TextBox>
+
         <Label Grid.Column="1"> Nachname</Label>
-        
-        <Button Click="ButtonBase_OnClick" Grid.Column="2" Grid.Row="1">Submit</Button>
-        
+
+
+        <Button Click="BtnSubmitOnClick" Grid.Column="3" Grid.Row="7" Margin="5">Speichern</Button>
+        <Button Grid.Row="8" Grid.Column="2" Click="BtnGetJsonOnClick" Margin="5">JSON Runterladen</Button>
+
+        <TextBox Name="VornameTextInput" Grid.Row="1" Grid.Column="1" Margin="5"></TextBox>
+        <Label Grid.Column="1"> Nachname</Label>
+
+        <TextBox Name="GeburtstagTextInput" Grid.Row="1" Grid.Column="2" Margin="5"></TextBox>
+        <Label Grid.Row="0" Grid.Column="2">Geburtstag</Label>
+
+        <TextBox Name="AbteilungTextInput" Grid.Row="3" Grid.Column="0" Margin="5"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0">Abteilung</Label>
+
+        <TextBox Name="KontonummerTextInput" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
+        <Label Grid.Row="2" Grid.Column="1">Kontonummer</Label>
+
+        <TextBox Name="PLZTextInput" Grid.Row="3" Grid.Column="2" Margin="5"></TextBox>
+        <Label Grid.Row="2" Grid.Column="2">PLZ</Label>
+
+        <TextBox Name="StrasseTextInput" Grid.Row="5" Grid.Column="0" Margin="5"></TextBox>
+        <Label Grid.Row="4" Grid.Column="0">Straße</Label>
     </Grid>
-    
-    
+
+
 </Window>
