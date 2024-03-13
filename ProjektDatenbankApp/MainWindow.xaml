@@ -4,55 +4,123 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektDatenbankApp"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="Benutzerverwaltung" Height="450" Width="800">
-    <Grid>
+    <TabControl>
+        <TabItem Header="Login">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" /> <!-- Oberer Bereich -->
+                    <RowDefinition Height="Auto" /> <!-- Mittlerer Bereich für die drei Elemente -->
+                    <RowDefinition Height="*" /> <!-- Unterer Bereich -->
+                </Grid.RowDefinitions>
+    
+                <!-- Oberer Bereich (Leer) -->
+                <Label Grid.Row="0" />
+    
+                <!-- Mittlerer Bereich für die drei Elemente -->
+                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+                    <Label HorizontalAlignment="Center" >Password</Label>
+                    
+                    <PasswordBox Margin="0,3,0,0" Name="PasswordBox" ></PasswordBox>
+                    <Button Margin="0,3,0,0" HorizontalAlignment="Center"  Width="150" Click="LoginTestClicked">Login</Button>
+                </StackPanel>
+    
+                <!-- Unterer Bereich (Leer) -->
+                <Label Grid.Row="2" />
+            </Grid>
+        </TabItem>
+        <TabItem Header="Eingabe">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+            <Grid>
 
-        <TextBox Name="NameTextInput" Grid.Row="1" Grid.Column="0" Margin="5"></TextBox>
-        <Label Grid.Row="0" Grid.Column="0">Name</Label>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Label Grid.Column="1"> Nachname</Label>
+                <TextBox Name="NameTextInput" Grid.Row="1" Grid.Column="0" Margin="5"></TextBox>
+                <Label Margin="4,0,0,0" Grid.Row="0" Grid.Column="0">Name</Label>
+
+                <Label Margin="4,0,0,0" Grid.Column="1"> Nachname</Label>
 
 
-        <Button Click="BtnSubmitOnClick" Grid.Column="3" Grid.Row="7" Margin="5">Speichern</Button>
-        <Button Grid.Row="8" Grid.Column="2" Click="BtnGetJsonOnClick" Margin="5">JSON Runterladen</Button>
+                <Button Click="BtnSubmitOnClick" Grid.Column="3" Grid.Row="7" Width="150" Margin="5">Save</Button>
+                <Button Grid.Row="8" Grid.Column="2" Click="BtnGetJsonOnClick" Width="150" Margin="5">Download JSON</Button>
 
-        <TextBox Name="VornameTextInput" Grid.Row="1" Grid.Column="1" Margin="5"></TextBox>
-        <Label Grid.Column="1"> Nachname</Label>
+                <TextBox Name="VornameTextInput" Grid.Row="1" Grid.Column="1" Margin="5"></TextBox>
 
-        <TextBox Name="GeburtstagTextInput" Grid.Row="1" Grid.Column="2" Margin="5"></TextBox>
-        <Label Grid.Row="0" Grid.Column="2">Geburtstag</Label>
+                <!-- <TextBox Name="GeburtstagTextInput" Grid.Row="1" Grid.Column="2" Margin="5"></TextBox> -->
+                <Label Margin="4,0,0,0" Grid.Row="0" Grid.Column="2">Geburtstag</Label>
+                <DatePicker Name="GeburtstagTextInput" Grid.Row="1" Grid.Column="2" Width="255"></DatePicker>
 
-        <TextBox Name="AbteilungTextInput" Grid.Row="3" Grid.Column="0" Margin="5"></TextBox>
-        <Label Grid.Row="2" Grid.Column="0">Abteilung</Label>
+                <TextBox Name="AbteilungTextInput" Grid.Row="3" Grid.Column="0" Margin="5"></TextBox>
+                <Label Margin="4,0,0,0" Grid.Row="2" Grid.Column="0">Abteilung</Label>
 
-        <TextBox Name="KontonummerTextInput" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
-        <Label Grid.Row="2" Grid.Column="1">Kontonummer</Label>
+                <TextBox Name="KontonummerTextInput" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
+                <Label Margin="4,0,0,0" Grid.Row="2" Grid.Column="1">Kontonummer</Label>
 
-        <TextBox Name="PLZTextInput" Grid.Row="3" Grid.Column="2" Margin="5"></TextBox>
-        <Label Grid.Row="2" Grid.Column="2">PLZ</Label>
+                <TextBox Name="PLZTextInput" Grid.Row="3" Grid.Column="2" Margin="5"></TextBox>
+                <Label Margin="4,0,0,0" Grid.Row="2" Grid.Column="2">PLZ</Label>
 
-        <TextBox Name="StrasseTextInput" Grid.Row="5" Grid.Column="0" Margin="5"></TextBox>
-        <Label Grid.Row="4" Grid.Column="0">Straße</Label>
-    </Grid>
+                <TextBox Name="StrasseTextInput" Grid.Row="5" Grid.Column="0" Margin="5"></TextBox>
+                <Label Margin="4,0,0,0" Grid.Row="4" Grid.Column="0">Straße</Label>
 
+
+            </Grid>
+        </TabItem>
+
+
+        <TabItem Header="Suche">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Label Margin="4,0,0,0" Grid.Row="0"> Name</Label>
+                <TextBox Grid.Row="1" Name="NameSearchInput" Margin="5"></TextBox>
+                <Button Click="ButtonBase_OnClick" Grid.Row="1" Grid.Column="1">Suchen  </Button>
+                <Label Margin="4,0,0,0" Grid.Row="2" Name="searchResult"></Label>
+
+            </Grid>
+        </TabItem>
+
+    </TabControl>
 
 </Window>

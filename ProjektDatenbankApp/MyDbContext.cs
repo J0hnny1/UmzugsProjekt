@@ -11,10 +11,7 @@ public class MyDbContext: DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        // optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB");
-        //Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;Encrypt=False
-        //optionsBuilder.UseSqlServer("server= localhost; user= root; password= ; database = schule; Encrypt=False; Trusted_Connection=true");
-        const string connString = "server= localhost; user= root; password= ; database = umzug";
+        const string connString = "server=localhost; user=user; password=pw; database=umzug";
         optionsBuilder.UseMySql(connString, ServerVersion.AutoDetect(connString));
     }
 }
